@@ -4,7 +4,8 @@
 
 (defn -main
   [& args]
-  (let [p 66]
+  (let [p (pin/gpio-pin 66)]
+    (prn "Pin: " p)
     (pin/export! p)
     (prn "exported?" (pin/exported? p))
     (pin/output! p)
